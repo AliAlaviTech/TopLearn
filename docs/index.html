@@ -1,55 +1,275 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TopLearn | Project Showcase</title>
+
+  <title>TopLearn | تاپ لرن</title>
+  <meta name="description"
+        content="معرفی پروژه TopLearn و مشاهده کد منبع در گیت‌هاب">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
   <style>
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Vazirmatn', Tahoma, Arial, sans-serif;
       background: #0d1117;
-      color: white;
-    }
-    main {
+      color: #f0f6fc;
       min-height: 100vh;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    header {
+      border-bottom: 1px solid #30363d;
+      padding: 20px 0;
+    }
+
+    .nav {
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 24px;
+      gap: 16px;
     }
-    .content { max-width: 700px; }
-    h1 { font-size: clamp(42px, 8vw, 72px); margin-bottom: 16px; }
-    p { color: #aeb8c7; line-height: 1.8; }
-    a {
-      display: inline-block;
-      margin: 12px 8px;
-      padding: 14px 24px;
-      background: #238636;
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .language-button {
       color: white;
-      text-decoration: none;
-      border-radius: 8px;
+      background: #21262d;
+      border: 1px solid #444c56;
+      border-radius: 10px;
+      padding: 9px 20px;
     }
-    a.secondary { background: #30363d; }
+
+    .language-button:hover {
+      background: #30363d;
+    }
+
+    main {
+      min-height: 70vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 80px 0;
+    }
+
+    .hero { max-width: 750px; }
+
+    .tag {
+      color: #58a6ff;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: clamp(40px, 7vw, 76px);
+      margin: 16px 0;
+      line-height: 1.3;
+    }
+
+    p {
+      color: #8b949e;
+      font-size: 18px;
+      line-height: 2;
+    }
+
+    .buttons {
+      margin-top: 32px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      border-radius: 10px;
+      padding: 14px 26px;
+      font-weight: 700;
+      transition: 0.2s;
+    }
+
+    .primary {
+      background: #238636;
+      color: #fff;
+    }
+
+    .secondary {
+      background: #21262d;
+      color: #fff;
+      border: 1px solid #30363d;
+    }
+
+    .btn:hover {
+      opacity: 0.85;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      text-align: center;
+      border-top: 1px solid #30363d;
+      padding: 24px;
+      color: #8b949e;
+    }
+
+    html[dir="rtl"] { text-align: right; }
+    html[dir="ltr"] { text-align: left; }
+
+    .hero { text-align: center; }
+
+    @media (max-width: 600px) {
+      .buttons { flex-direction: column; }
+      .btn { width: 100%; }
+    }
   </style>
 </head>
+
 <body>
-  <main>
-    <div class="content">
-      <h1>TopLearn</h1>
-      <p>A software development project built with .NET.</p>
-      <p>Explore the source code and project structure on GitHub.</p>
-      <a href="https://github.com/ArefSeniorDev/TopLearn">
-        View on GitHub
-      </a>
-      <a class="secondary"
-         href="https://github.com/ArefSeniorDev/TopLearn/tree/master">
-        Explore Source Code
-      </a>
+
+  <header>
+    <div class="container nav">
+      <div class="logo">TopLearn</div>
+
+      <button id="languageButton"
+              class="language-button"
+              type="button">
+        English
+      </button>
     </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+
+      <span class="tag" data-i18n="tag">
+        معرفی پروژه
+      </span>
+
+      <h1 data-i18n="title">
+        به TopLearn خوش آمدید
+      </h1>
+
+      <p data-i18n="description">
+        یک پروژه نرم‌افزاری مبتنی بر دات‌نت.
+        کدها و ساختار پروژه را در گیت‌هاب مشاهده کنید.
+      </p>
+
+      <div class="buttons">
+        <a class="btn primary"
+           href="https://github.com/ArefSeniorDev/TopLearn"
+           target="_blank"
+           rel="noopener noreferrer"
+           data-i18n="github">
+          مشاهده در گیت‌هاب
+        </a>
+
+        <a class="btn secondary"
+           href="https://github.com/ArefSeniorDev/TopLearn/tree/master"
+           target="_blank"
+           rel="noopener noreferrer"
+           data-i18n="source">
+          بررسی کد منبع
+        </a>
+      </div>
+
+    </section>
   </main>
+
+  <footer data-i18n="footer">
+    پروژه TopLearn
+  </footer>
+
+  <script>
+    const translations = {
+      fa: {
+        tag: "معرفی پروژه",
+        title: "به TopLearn خوش آمدید",
+        description:
+          "یک پروژه نرم‌افزاری مبتنی بر دات‌نت. " +
+          "کدها و ساختار پروژه را در گیت‌هاب مشاهده کنید.",
+        github: "مشاهده در گیت‌هاب",
+        source: "بررسی کد منبع",
+        footer: "پروژه TopLearn"
+      },
+
+      en: {
+        tag: "Project Showcase",
+        title: "Welcome to TopLearn",
+        description:
+          "A software project built with .NET. " +
+          "Explore the source code and project structure on GitHub.",
+        github: "View on GitHub",
+        source: "Explore Source Code",
+        footer: "TopLearn Project"
+      }
+    };
+
+    const languageButton =
+      document.getElementById("languageButton");
+
+    let currentLanguage = "fa";
+
+    try {
+      currentLanguage =
+        localStorage.getItem("toplearn-language") || "fa";
+    } catch (error) {
+      currentLanguage = "fa";
+    }
+
+    function setLanguage(lang) {
+      if (!translations[lang]) lang = "fa";
+
+      currentLanguage = lang;
+
+      document.documentElement.lang = lang;
+      document.documentElement.dir =
+        lang === "fa" ? "rtl" : "ltr";
+
+      document.querySelectorAll("[data-i18n]")
+        .forEach(element => {
+          const key = element.dataset.i18n;
+          element.textContent = translations[lang][key];
+        });
+
+      languageButton.textContent =
+        lang === "fa" ? "English" : "فارسی";
+
+      try {
+        localStorage.setItem("toplearn-language", lang);
+      } catch (error) {
+        // Language switching still works without storage.
+      }
+    }
+
+    languageButton.addEventListener("click", () => {
+      setLanguage(
+        currentLanguage === "fa" ? "en" : "fa"
+      );
+    });
+
+    setLanguage(currentLanguage);
+  </script>
+
 </body>
 </html>
